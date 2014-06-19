@@ -14,8 +14,25 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+		<script src="http://ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
+	    <script>
+	        WebFont.load({
+	             custom: {
+	                 families: [
+	                     'Gotham SSm:n4,n7',
+	                     'Gotham:n4,n7'
+	                 ],
+	                 urls: [
+	                     'http://s.npr.org/templates/css/fonts/GothamSSm.css',
+	                     'http://s.npr.org/templates/css/fonts/Gotham.css'
+	                 ]
+	             },
+	             timeout: 10000
+	         });
+	    </script>
+
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/npr.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -365,13 +382,16 @@ function linkify( selector ) {
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
-				progress: true,
+				width: 1024,
+				height: 700,
+
+				controls: false,
+				progress: false,
 				history: true,
 				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
