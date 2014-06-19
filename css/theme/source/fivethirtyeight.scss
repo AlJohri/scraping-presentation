@@ -1,0 +1,156 @@
+/**
+ * Default theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// FiveThirtyEight Colors -----------------
+// source: https://github.com/fivethirtyeight/world-cup/blob/master/src/stylesheets/lib/fivethirtyeight.scss
+$gray: #5b5e5f;
+$lightGray: #c7c7c7;
+$darkGray: #3c3c3c;
+$purple: #636;
+$green: #77ab43;
+$blue: #025b94;
+$yellow: #f2b111;
+$red: #c4380d;
+$black: #222;
+$white: #fff;
+$lightGreen: #bfd7a6;
+// ---------------------------------------------
+
+// FiveThirtyEight Fonts -----------------
+// source: http://www.typewolf.com/site-of-the-day/fivethirtyeight
+// ---------------------------------------------
+
+$backgroundColor: white;
+
+$mainColor: #111;
+$mainFont: Gotham, Georgia, serif;
+$mainFontSize: 40px;
+
+$headingFont: 'Gotham', Helvetica, Arial, sans-serif;
+$headingColor: #333;
+
+$linkColor: $blue;
+
+$selectionBackgroundColor: #bccae5;
+$selectionColor: #000;
+
+$borderHeight: 12px;
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+.reveal {
+
+    box-sizing: border-box;
+    border-top: black $borderHeight solid;
+
+    transition: border 500ms ease-out;
+    -webkit-transition: border 500ms ease-out;
+    -moz-transition: border 500ms ease-out;
+    -o-transition: border 500ms ease-out;
+
+    h1, h2, h3, h4, h5, h6 {
+        text-shadow: none;
+        text-transform: none;
+    }
+    h1 {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .big {
+       font-size: 500%;
+       font-weight: bold;
+    }
+    .title-slide-text {
+        color: $backgroundColor;
+    }
+
+    section {
+        img {
+            margin: 0;
+            border: none;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    blockquote {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.10);
+        font-size: 110%;
+        text-align: center;
+    }
+    .citation {
+        text-align: right;
+        font-size: 90%;
+    }
+    p {
+        font-size: 40px;
+    }
+    p.small {
+        font-size: 24px;
+    }
+}
+
+.title-slide .reveal .state-background {
+    background-color: $blue;
+}
+
+.title-slide .reveal {
+    border: none;
+    transition: border 500ms ease-out;
+    -webkit-transition: border 500ms ease-out;
+    -moz-transition: border 500ms ease-out;
+    -o-transition: border 500ms ease-out;
+
+}
+
+// Bottom border
+
+.reveal {
+  margin-bottom: -$borderHeight;
+  z-index: -1;
+}
+
+ul.border {
+  padding: 0px;
+  list-style:none;
+  width:100%;
+  font-size:0;
+  z-index: 1;
+
+  li {
+    display:inline-block;
+    width:16.667%; 
+    height:$borderHeight;
+  }
+
+  li:nth-child(1) { background:$gray; }
+  li:nth-child(2) { background:$purple; }
+  li:nth-child(3) { background:$green; }
+  li:nth-child(4) { background:$blue; }
+  li:nth-child(5) { background:$yellow; }
+  li:nth-child(6) { background:$red; }
+}
+
+#fox {
+  background: url('http://i.imgur.com/X4G28I7.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+  background-size: 100% 100%;
+  width: 27px * 1.5;
+  height: 36px * 1.5;
+}
