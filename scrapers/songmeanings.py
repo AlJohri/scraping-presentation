@@ -12,11 +12,10 @@ for letter in letters:
 	response = requests.get('http://songmeanings.com/artist/directory/%s/?page=%d' % (letter, page))
 	doc = lxml.html.fromstring(response.content)
 	pagination_text = doc.cssselect('.song-info li:nth-child(2)')[0].text_content().strip()
-	import pdb; pdb.set_trace()
 	pages = pagination_regex.findall(pagination_text)[0]
 
 	# start from page 2 to number of pages
-	for page in range(2, int(pages)):
+	for page in range(1, int(pages)):
 		response = requests.get('http://songmeanings.com/artist/directory/%s/?page=%d' % (letter, page))
 		doc = lxml.html.fromstring(response.content)
 		artists = doc.cssselect("#artistslist table tbody tr")
